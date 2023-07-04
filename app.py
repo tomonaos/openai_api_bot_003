@@ -14,9 +14,9 @@ from langchain.schema import (
 
 
 # Streamlit Community Cloudの「Secrets」からOpenAI API keyを取得
-openai.api_key = st.secrets.OpenAIAPI.openai_api_key
+##openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
-chat = ChatOpenAI(temperature=0)
+##chat = ChatOpenAI(temperature=0)
 
 MAX_CHAT = 40
 
