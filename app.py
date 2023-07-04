@@ -29,7 +29,7 @@ prompt = ChatPromptTemplate.from_messages([
 ])
 
 # LangChainのLarge Language Model (LLM)を設定
-llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
+##llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
 
 
 
