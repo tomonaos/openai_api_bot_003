@@ -9,13 +9,17 @@ from langchain.schema import (
     SystemMessage,
 )
 
-chat = ChatOpenAI(temperature=0)
 
 
-MAX_CHAT = 40
+
 
 # Streamlit Community Cloudの「Secrets」からOpenAI API keyを取得
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
+
+chat = ChatOpenAI(temperature=0)
+
+MAX_CHAT = 40
+
 # st.session_stateを使いメッセージのやりとりを保存
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
