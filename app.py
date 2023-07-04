@@ -2,6 +2,7 @@
 import streamlit as st
 from streamlit_chat import message
 import openai
+from langchain.chat_models import ChatOpenAI
 
 MAX_CHAT = 40
 
