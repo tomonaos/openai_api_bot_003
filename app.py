@@ -3,36 +3,13 @@ import streamlit as st
 from streamlit_chat import message
 import openai
 from langchain.chat_models import ChatOpenAI
-from langchain.chains import ConversationChain
-from langchain.memory import ConversationBufferMemory
-from langchain.prompts import (
-    ChatPromptTemplate,
-    MessagesPlaceholder,
-    SystemMessagePromptTemplate,
-    HumanMessagePromptTemplate
+from langchain.schema import (
+    AIMessage,
+    HumanMessage,
+    SystemMessage,
 )
 
-# プロンプトテンプレートの準備
-template = """あなたは猫のキャラクターとして振る舞うチャットボットです。
-制約:
-- 簡潔な短い文章で話します
-- 語尾は「…にゃ」、「…にゃあ」などです
-- 質問に対する答えを知らない場合は「知らないにゃあ」と答えます
-- 名前はクロです
-- 好物はかつおぶしです"""
-
-# プロンプトの準備
-prompt = ChatPromptTemplate.from_messages([
-    SystemMessagePromptTemplate.from_template(template),
-    MessagesPlaceholder(variable_name="history"),
-    HumanMessagePromptTemplate.from_template("{input}")
-])
-
-# LangChainのLarge Language Model (LLM)を設定
-##llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
-
-# メモリの設定
-memory = ConversationBufferMemory(return_messages=True)
+#chat = ChatOpenAI(temperature=0)
 
 
 MAX_CHAT = 40
