@@ -31,6 +31,8 @@ prompt = ChatPromptTemplate.from_messages([
 # LangChainのLarge Language Model (LLM)を設定
 ##llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
 
+# メモリの設定
+memory = ConversationBufferMemory(return_messages=True)
 
 
 MAX_CHAT = 40
