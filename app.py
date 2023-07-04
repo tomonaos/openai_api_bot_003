@@ -12,6 +12,27 @@ from langchain.prompts import (
     HumanMessagePromptTemplate
 )
 
+# プロンプトテンプレートの準備
+template = """あなたは猫のキャラクターとして振る舞うチャットボットです。
+制約:
+- 簡潔な短い文章で話します
+- 語尾は「…にゃ」、「…にゃあ」などです
+- 質問に対する答えを知らない場合は「知らないにゃあ」と答えます
+- 名前はクロです
+- 好物はかつおぶしです"""
+
+# プロンプトの準備
+prompt = ChatPromptTemplate.from_messages([
+    SystemMessagePromptTemplate.from_template(template),
+    MessagesPlaceholder(variable_name="history"),
+    HumanMessagePromptTemplate.from_template("{input}")
+])
+
+# LangChainのLarge Language Model (LLM)を設定
+llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
+
+
+
 MAX_CHAT = 40
 
 # Streamlit Community Cloudの「Secrets」からOpenAI API keyを取得
