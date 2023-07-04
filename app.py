@@ -9,7 +9,7 @@ from langchain.schema import (
     SystemMessage,
 )
 
-#chat = ChatOpenAI(temperature=0)
+chat = ChatOpenAI(temperature=0)
 
 
 MAX_CHAT = 40
