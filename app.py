@@ -17,6 +17,8 @@ from langchain.schema import (
 ##openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
 chat = ChatOpenAI(temperature=0)
+response = chat([HumanMessage(content="Translate this sentence from English to Japanese. I love programming.")])
+
 
 MAX_CHAT = 40
 
@@ -49,6 +51,8 @@ def communicate():
 
 # ユーザーインターフェイスの構築
 st.title("AI面接官")
+
+st.caption(response)
 
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
