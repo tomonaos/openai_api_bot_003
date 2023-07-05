@@ -52,29 +52,18 @@ def communicate():
 # ユーザーインターフェイスの構築
 st.title("AI面接官")
 
-st.caption(response["content"][0])
+st.caption(response)
 
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
-    #speaker="🤖"
-    #st.write(speaker + ": " + messages[-1]["content"])
     message(messages[-1]["content"]) 
-    #message("Hello bot!", is_user=True)
-    ###msg2 = st.chat_message("assistant")
-    ##msg.write(messages[-1]["content"])
-    ###with st.chat_message("user"):
-        ###st.write("Hello 👋")
 
-
-#user_input = st.text_input("", key="user_input", max_chars=150, on_change=communicate)
 
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
     if len(messages) < MAX_CHAT:
         user_input = st.text_input("", key="user_input", max_chars=200, on_change=communicate)
 
-    #st.subheader("これまでのやりとり")
-    #for message in reversed(messages[1:]):  # 直近のメッセージを上に
     for message in messages[2:]:  # 
         
         speaker = "🙂"
@@ -83,5 +72,3 @@ if st.session_state["messages"]:
 
         st.write(speaker + ": " + message["content"])
 
-#message("My message") 
-#message("Hello bot!", is_user=True)  # align's the message to the right
