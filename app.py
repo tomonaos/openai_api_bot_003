@@ -52,7 +52,7 @@ def communicate():
 # ユーザーインターフェイスの構築
 st.title("AI面接官")
 
-st.caption(response["content"])
+st.caption(response["content"][0])
 
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
