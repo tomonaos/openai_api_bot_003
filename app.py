@@ -20,6 +20,6 @@ result = index.query("えのキャリアとは何ですか")
 
 # ユーザーインターフェイスの構築
 st.title("AI面接官")
-st.caption("えのキャリアとは何ですか")
-st.caption(f"result: {result}")
+###st.caption("えのキャリアとは何ですか")
+###st.caption(f"result: {result}")
 
