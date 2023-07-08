@@ -10,10 +10,10 @@ import langchain
 
 
 # Streamlit Community Cloudの「Secrets」からOpenAI API keyを取得
-##openai.api_key = st.secrets.OpenAIAPI.openai_api_key
+openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
-chat = ChatOpenAI(temperature=0)
-response = chat([HumanMessage(content="Translate this sentence from English to Japanese. I love drinking beer.")])
+###chat = ChatOpenAI(temperature=0)
+##response = chat([HumanMessage(content="Translate this sentence from English to Japanese. I love drinking beer.")])
 
 
 MAX_CHAT = 40
