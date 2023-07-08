@@ -49,6 +49,7 @@ st.title("AI面接官")
 
 st.caption("AI面接官です")
 
+"""
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
     message(messages[-1]["content"]) 
@@ -67,3 +68,4 @@ if st.session_state["messages"]:
 
         st.write(speaker + ": " + message["content"])
 
+"""
