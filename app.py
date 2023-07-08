@@ -2,13 +2,9 @@
 import streamlit as st
 from streamlit_chat import message
 import openai
-from langchain.chat_models import ChatOpenAI
-from langchain.schema import (
-    AIMessage,
-    HumanMessage,
-    SystemMessage,
-)
-
+from langchain.document_loaders import DirectoryLoader
+from langchain.indexes import VectorstoreIndexCreator
+import langchain
 
 
 
