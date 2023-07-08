@@ -13,7 +13,7 @@ openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 ##response = chat([HumanMessage(content="Translate this sentence from English to Japanese. I love drinking beer.")])
 langchain.verbose = True
 
-loader = DirectoryLoader("./", glob="**/*.html")
+loader = DirectoryLoader("./", glob="*.html")
 index = VectorstoreIndexCreator().from_loaders([loader])
 
 result = index.query("えのキャリアとは何ですか")
