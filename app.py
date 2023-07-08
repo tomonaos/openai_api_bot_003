@@ -11,8 +11,15 @@ openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
 ###chat = ChatOpenAI(temperature=0)
 ##response = chat([HumanMessage(content="Translate this sentence from English to Japanese. I love drinking beer.")])
+langchain.verbose = True
+
+loader = DirectoryLoader("./", glob="**/*.html")
+index = VectorstoreIndexCreator().from_loaders([loader])
+
+result = index.query("えのキャリアとは何ですか")
 
 # ユーザーインターフェイスの構築
 st.title("AI面接官")
-st.caption("AI面接官です")
+st.caption("えのキャリアとは何ですか")
+st.caption(f"result: {result}")
 
