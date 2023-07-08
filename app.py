@@ -6,17 +6,16 @@ from langchain.document_loaders import DirectoryLoader
 from langchain.indexes import VectorstoreIndexCreator
 import langchain
 
-
-
-
 # Streamlit Community Cloudの「Secrets」からOpenAI API keyを取得
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
 ###chat = ChatOpenAI(temperature=0)
 ##response = chat([HumanMessage(content="Translate this sentence from English to Japanese. I love drinking beer.")])
 
-
+"""
 MAX_CHAT = 40
+
+
 
 # st.session_stateを使いメッセージのやりとりを保存
 if "messages" not in st.session_state:
@@ -43,7 +42,7 @@ def communicate():
 
     st.session_state["user_input"] = ""  # 入力欄を消去
 
-
+"""
 
 # ユーザーインターフェイスの構築
 st.title("AI面接官")
